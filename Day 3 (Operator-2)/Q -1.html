@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <center>
+
+
+        <h1>Student Marks</h1>
+
+
+    <h1>Maths Mark is :</h1>
+    <input type="text" id="in1">
+
+    <h1>English Mark is :</h1>
+    <input type="text" id="in2">
+
+    <h1>Computer Mark is :</h1>
+    <input type="text" id="in3">
+
+    <h1>Sport Mark is :</h1>
+    <input type="text" id="in4">
+
+    <h1>Physics Mark is :</h1>
+    <input type="text" id="in5">
+
+    <h1 id="ans"></h1>
+
+</center>
+</body>
+</html>
+
+
+<script>
+    let b = document.getElementById("in1").value
+    let c = document.getElementById("in2").value
+    let d = document.getElementById("in3").value
+    let e = document.getElementById("in4").value
+    let f = document.getElementById("in5").value
+
+
+     let ans = +b + +c + +d + +e + +f 
+
+     let percentage = (ans / 500) * 100
+
+     document.getElementById("ans").innerHTML = percentage
+
+</script>
