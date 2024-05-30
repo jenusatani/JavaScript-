@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   #h1{
+    color: greenyellow;
+    font-family: cursive;
+    font-weight: 900;
+   }
+
+   h2{
+    color: coral;
+    font-family: sans-serif;
+    font-weight: 900;
+   }
+
+   #result{
+    color: deepskyblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+   }
+
+   #num{
+    color: mediumspringgreen;
+    font-size: 30px;
+    border: 3px solid;
+   }
+</style>
+<body>
+    <center>
+    <h1 id="h1">Sum of Odd Numbers in Array</h1>
+    <h2 for="num">Enter array of numbers:</h2>
+    <input type="text" id="num" name="num" value="numbers"><br><br>
+    <h2 id="result"></h2>
+</center>
+</body>
+
+</html>
+<script>
+    let num = document.getElementById("num").value.split(',');
+    let sum = 0
+    let oddNum = num.filter((val) => {
+        if (val % 2 !== 0) {
+            return sum = sum + val
+        }
+    })
+    
+    document.getElementById("result").innerHTML = "The sum of odd numbers is: " + sum
+
+    
+</script>
