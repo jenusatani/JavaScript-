@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <form id="submit" id="submit">
+        <center><span id="err" ></span></center>
+        <label for="name">Enter Your Name </label>
+        <input type="text" id="name">
+
+        <label for="email">Enter Your Email ID</label>
+        <input type="text" id="email">
+        
+        <label for="ps">Enter Your Password</label>
+        <input type="password" id="ps">
+
+        <label for="cps">Enter Your Confirm Password</label>
+        <input type="password" id="cps">
+
+        <label for="date">Enter Your Birthday Date</label>
+        <input type="date" id="date">
+
+        <label for="hobby">Enter Your Hobby</label>
+        <input type="text" id="hobby">
+
+        <label for="hobby">Enter Your Age</label>
+        <input type="text" id="age">
+
+        <label for="Gender">Enter Your Gender</label>
+        <select id="Gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+<script>
+    document.getElementById("submit").onsubmit = function(event){
+        document.getElementById("err").innerHTML = ""
+        event.preventDefault()
+
+        try {
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let password = document.getElementById("ps").value
+            let confir_password = document.getElementById("cps").value
+            let date = document.getElementById("date").value
+            let hobby = document.getElementById("hobby").value
+            let Age = document.getElementById("age").value
+
+
+            if (name === "" || /\d/.test(name)) {
+                throw new Error("Please enter the required Name detail.")
+            }
+            
+            if (email === "" ||! /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+                throw new Error("Please enter the  required Email detail.")
+            }
+            
+            if (password === "" ||! /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/) {
+                throw new Error("Please enter the required Password detail.")
+            }
+            if (confir_password === "" ||! /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/) {
+                throw new Error("Please enter the required Confir Password detail.")
+            }
+            
+            if (date === "" ||! /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/) {
+                throw new Error("Please enter the required Date detail.")
+            }
+            if (hobby === ""|| /\d/.test(name)) {
+                throw new Error("Please enter the required Hobby detail.")
+            }
+
+            if (Age === ""||! /\D/.test(age)) {
+                throw new Error("Please enter the required your Age  detail.")
+            }
+     
+            
+            if(password.length < 8){
+                throw new Error("Password should have at least 8 characters")
+            }
+            
+            if(password !== confir_password){
+                throw new Error("Password does not match.")
+            }
+
+        } catch (e) {
+            document.getElementById("err").innerHTML = e.message
+            document.getElementById("err").style.color = "red"
+        }
+    }
+</script>
