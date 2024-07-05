@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+ <script>
+    class EV{
+        constructor (name , price ,range){
+            this.name = name
+            this.price = price
+            this.range = range 
+        }
+        showrange(name , range){
+        console.log(this.name +" Range is " +  this.range + " Km/h")
+        }
+        showprice(name , price){
+        console.log(this.name +" Price is " + this.price +" Rs")
+        }
+    }
+    class Electric extends EV {
+    }
+
+let BMW = new Electric("BMW",31400000,516)
+BMW.showrange("BMW",516)
+BMW.showprice("BMW",31400000)
+let TESLA = new Electric("TESLA",11400000,490)
+TESLA.showrange("TESLA",490)
+TESLA.showprice("BMW",11400000)
+    </script>
