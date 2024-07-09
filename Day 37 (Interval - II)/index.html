@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #im1{
+            display: none;
+            transition: 0.5s;
+            height: 80vh;
+            width: 100vh;
+            border-radius: 50px;
+        }
+
+        #im2{
+            display: none;
+            transition: 0.5s;
+            height: 80vh;
+            width: 100vh;
+            border-radius: 50px;
+        }
+
+        #im3{
+            display: none;
+            transition: 0.5s;
+            height: 80vh;
+            width: 100vh;
+            border-radius: 50px;
+        }
+        #main{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="main" >
+            <img id="im1" src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/Design/art-cars/ac-00-teaser-square2.jpg?imwidth=1024" alt="">
+            <img id="im2" src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/notes/n-00-teaser-hd.jpg?imwidth=1280" alt="">
+            <img id="im3" src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/events/neue-klasse/neue-klasse-hub-00-teaser-hd-2.jpg?imwidth=1280" alt="">
+        
+    </div>
+    
+    
+</body>
+</html>
+<script>
+    let img = document.querySelectorAll("img")
+let index = 0
+
+function slides(index){
+    for(let i = 0; i < img.length; i++){
+        img[i].style.display = "none"
+    }
+    img[index].style.display = "block"
+}
+
+function slider(){
+    setInterval(()=>{
+        slides(index)
+        index++
+        if(index === img.length){
+            index = 0
+        }
+    },2000)
+}
+slider()
+
+</script>
